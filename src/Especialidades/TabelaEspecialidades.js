@@ -29,6 +29,11 @@ const Corpo = (props) => {
                         linha.medicos.map((medico) => <p key={medico.id}>{medico.nome} - {medico.numCedulaProf}</p>)
                     }
                 </td>
+                <td className="align-middle">
+                    <button className="btn btn-outline-danger"
+                        onClick={() => props.apagarEspecialidade(linha.id)}>
+                    Apagar</button>
+                </td>
             </tr>
         )
     })
@@ -42,11 +47,11 @@ const Corpo = (props) => {
 class TabelaEspecialidades extends React.Component {
 
     render() {
-        const { dadosEspecIN } = this.props;
+        const { dadosEspecIN, apagaOUT } = this.props;
         return (
-            <table className="table table-striped table-bordered">
+            <table className="table table-striped">
                 <Cabecalho />
-                <Corpo dadosTabelaIN={dadosEspecIN} />
+                <Corpo dadosTabelaIN={dadosEspecIN} apagarEspecialidade={apagaOUT}/>
             </table>
         )
     }

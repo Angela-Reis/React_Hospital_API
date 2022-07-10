@@ -3,8 +3,8 @@
  */
 
 import React from "react"
-import TabelaEspecialidades from "./TabelaEspecialidades";
-import TabelaMedicos from "./TabelaMedicos";
+import Especialidades from "./Especialidades/Especialidades";
+import Medicos from "./Medicos/Medicos";
 import TabelaUtente from "./TabelaUtente";
 import TabelaConsultas from "./TabelaConsultas";
 import TabelaDiagnosticos from "./TabelaDiagnosticos";
@@ -135,8 +135,8 @@ class App extends React.Component {
   }
 
   /**
-* load os dados dos pagamentos da API 
-*/
+  * load os dados dos pagamentos da API 
+  */
   async LoadPagamentos() {
     try {
       // ler os dados dos pagamentos do API
@@ -156,15 +156,8 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <h1>Especialidades</h1>
-        <br />
-        <h4>Lista de Especialidades</h4>
-        <TabelaEspecialidades dadosEspecIN={especialidades} />
-        <h1>Médicos</h1>
-        <br />
-        <h4>Lista de Médicos</h4>
-        <TabelaMedicos dadosMedicosIN={medicos} />
-        <br /><br />
+        <Especialidades especialidadesIN={especialidades} medicosIN={medicos} LoadDados={this.LoadEspecialidades.bind(this)} />
+        <Medicos medicosIN={medicos} especialidadesIN={especialidades}  LoadDados={this.LoadMedicos.bind(this)} />
         <h1>Utentes</h1>
         <br />
         <h4>Lista de Utentes</h4>
