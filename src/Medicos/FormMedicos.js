@@ -90,6 +90,18 @@ class FormMedicos extends React.Component {
             especialidadesId: this.state.medicosEspecialidadesFKs
         }
         this.props.novoMedicoOUT(formData);
+        // limpar o formulario
+        this.setState({
+            medicoNome: "",
+            medicoNumCedulaProf: "",
+            medicoNumTelefone: "",
+            medicoEmail: "",
+            medicoDataNascimento: "",
+            medicoFoto: null,
+            medicosEspecialidadesFKs: [],
+        })
+
+        event.target.reset();
     }
 
     /**

@@ -56,11 +56,10 @@ class Especialidades extends React.Component {
             // exporta os dados para a API
             await InsireEspecialidade(especialidade);
             // recarregar a Tabela com os dados das especialidades
-            this.props.LoadDados();
+            await this.props.LoadDados();
         } catch (error) {
             console.error("Ocorreu um erro com a adição da especialidade " + especialidade.Nome)
         }
-
     }
 
     /**
@@ -72,7 +71,7 @@ class Especialidades extends React.Component {
             // exporta os dados para a API
             await ApagaEspecialidade(id);
             // recarregar a Tabela com os dados
-            this.props.LoadDados();
+            await this.props.LoadDados();
         } catch (error) {
             console.error("ocorreu um erro com a eliminação da especialidade.")
         }

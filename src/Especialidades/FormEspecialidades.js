@@ -80,13 +80,19 @@ class FormEspecialidades extends React.Component {
             medicosId: this.state.especialidadeMedicosFKs,
         }
         this.props.novaEspecialidadeOUT(formData);
+        // limpar o formulario
+        this.setState({
+            especialidadeNome: "",
+            especialidadeMedicosFKs: [],
+        })
+        event.target.reset();
     }
 
 
 
     render() {
         // read the state and props values
-        const { especialidadeNome, especialidadeMedicosFKs } = this.state;
+        const { especialidadeNome } = this.state;
         const { medicosIN } = this.props;
 
         return (
@@ -98,6 +104,8 @@ class FormEspecialidades extends React.Component {
                     <div className="col-md-4">
                         Nome: <input type="text"
                             required
+                            pattern="[A-ZÂÓÍa-záéíóúàèìòùâêîôûãõäëïöüñç '-]+"
+                            maxLength={60}
                             className="form-control"
                             name="especialidadeNome"
                             value={especialidadeNome}

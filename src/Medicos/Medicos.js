@@ -62,11 +62,10 @@ class Medicos extends React.Component {
             // exporta os dados para a API
             await InsireMedico(medico);
             // recarregar a Tabela com os dados das especialidades
-            this.props.LoadDados();
+            await this.props.LoadDados();
         } catch (error) {
             console.error("Ocorreu um erro com a adição do medico " + medico.Nome)
         }
-
     }
 
     /**
@@ -78,7 +77,7 @@ class Medicos extends React.Component {
             // exporta os dados para a API
             await ApagaMedico(id);
             // recarregar a Tabela com os dados
-            this.props.LoadDados();
+            await this.props.LoadDados();
         } catch (error) {
             console.error("ocorreu um erro com a eliminação do médico.")
         }

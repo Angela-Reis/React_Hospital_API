@@ -33,7 +33,7 @@ const Corpo = (props) => {
                 <td>{linha.dataNascimento}</td>
                 <td>{linha.especialidades.map(function (especialidade) { return especialidade.nome }).join(", ")}
                 </td>
-                <td><img src={'https://localhost:7194' + '/Fotos/Medicos/' + linha.foto}
+                <td><img src={'https://localhost:7194/Fotos/Medicos/' + linha.foto}
                     alt={'Foto de Médico ' + linha.nome}
                     title={linha.nome}
                     height="80" /></td>
