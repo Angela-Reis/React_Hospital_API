@@ -5,11 +5,11 @@
 import React from "react"
 import Especialidades from "./Especialidades/Especialidades";
 import Medicos from "./Medicos/Medicos";
-import TabelaConsultas from "./TabelaConsultas";
 import TabelaDiagnosticos from "./TabelaDiagnosticos";
 import TabelaPrescricoes from "./TabelaPrescricoes";
 import TabelaPagamentos from "./TabelaPagamentos";
 import Utentes from "./Utentes/Utentes";
+import Consultas from "./Consultas/Consultas";
 
 /**
  * função que pede à API os dados do link, sendo o link uma string
@@ -159,10 +159,11 @@ class App extends React.Component {
         <Especialidades especialidadesIN={especialidades} medicosIN={medicos} LoadDados={this.LoadEspecialidades.bind(this)} />
         <Medicos medicosIN={medicos} especialidadesIN={especialidades}  LoadDados={this.LoadMedicos.bind(this)} />
         <Utentes utentesIN={utentes} LoadDados={this.LoadUtentes.bind(this)} />
-        <h1>Consultas</h1>
-        <br />
-        <h4>Lista de Consultas</h4>
-        <TabelaConsultas dadosConsultasIN={consultas} />
+        <Consultas consultasIN={consultas} 
+                  medicosIN={medicos} 
+                  utentesIN={utentes} 
+                  diagnosticosIN = {diagnosticos}
+                  LoadDados={this.LoadConsultas.bind(this)} />
         <br /><br />
         <h1>Diagnostico</h1>
         <br />

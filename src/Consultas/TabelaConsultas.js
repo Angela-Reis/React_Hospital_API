@@ -22,7 +22,7 @@ function Cabecalho() {
 
 
 const Corpo = (props) => {
-        const linhas = props.dadosTabelaIN.map((linha) => {
+    const linhas = props.dadosTabelaIN.map((linha) => {
         return (
             <tr key={linha.id}>
                 <td>{linha.medico}</td>
@@ -31,6 +31,11 @@ const Corpo = (props) => {
                 <td>{linha.estado}</td>
                 <td>{linha.motivo}</td>
                 <td>{linha.diagnostico}</td>
+                <td className="align-middle">
+                    <button className="btn btn-outline-danger"
+                        onClick={() => props.apagarDados(linha.id)}>
+                        Apagar</button>
+                </td>
             </tr>
         )
     })
@@ -43,11 +48,11 @@ const Corpo = (props) => {
 class TabelaConsultas extends React.Component {
 
     render() {
-        const { dadosConsultasIN } = this.props;
+        const { dadosConsultasIN, apagaOUT } = this.props;
         return (
             <table className="table table-striped table-bordered">
                 <Cabecalho />
-                <Corpo dadosTabelaIN={dadosConsultasIN} />
+                <Corpo dadosTabelaIN={dadosConsultasIN} apagarDados={apagaOUT} />
             </table>
         )
     }
