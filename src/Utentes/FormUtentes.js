@@ -91,7 +91,7 @@ class FormUtentes extends React.Component {
                 label: "Mulher",
             },
             {
-                value: "M",
+                valor: "M",
                 label: "Homem",
             }
           ];
