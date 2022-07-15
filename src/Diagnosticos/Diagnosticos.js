@@ -87,6 +87,7 @@
                  <br />
                  <h4>Lista de Diagnosticos</h4>
                  <TabelaDiagnosticos dadosTabelaIN={diagnosticosIN} apagaOUT={this.handleApaga} />
+                 <br /><br />
              </div>
          )
      }
