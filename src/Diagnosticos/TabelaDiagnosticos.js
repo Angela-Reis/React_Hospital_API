@@ -27,6 +27,11 @@ const Corpo = (props) => {
                 <td>{linha.estado}</td>
                 <td>{linha.descricao}</td>
                 <td>{linha.utente}</td>
+                <td className="align-middle">
+                    <button className="btn btn-outline-danger"
+                        onClick={() => props.apagarDados(linha.id)}>
+                    Apagar</button>
+                </td>
             </tr>
         )
     })
@@ -39,11 +44,11 @@ const Corpo = (props) => {
 class TabelaDiagnosticos extends React.Component {
 
     render() {
-        const { dadosDiagnosticosIN } = this.props;
+        const { dadosTabelaIN,apagaOUT } = this.props;
         return (
             <table className="table table-striped table-bordered">
                 <Cabecalho />
-                <Corpo dadosTabelaIN={dadosDiagnosticosIN} />
+                <Corpo dadosTabelaIN={dadosTabelaIN} apagarDados={apagaOUT}/>
             </table>
         )
     }
