@@ -85,7 +85,7 @@
      render() {
          const { pagamentosIN, consultasIN } = this.props;
          return (
-             <div>
+             <div  className="border p-5 mb-5">
                  <h1>Pagamentos</h1>
                  <h4>Novo Pagamento:</h4>
                  <FormPagamentos novoPagamentoOUT={this.handleNovoPagamento}

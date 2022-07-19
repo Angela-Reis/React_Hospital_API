@@ -80,7 +80,7 @@
      render() {
          const { diagnosticosIN } = this.props;
          return (
-             <div>
+             <div className="border p-5 mb-5">
                  <h1>Diagnosticos</h1>
                  <h4>Novo Diagnostico:</h4>
                  <FormDiagnosticos  novoDiagnosticoOUT={this.handleNovoDiagnostico} />

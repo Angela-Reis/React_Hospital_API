@@ -5,12 +5,12 @@
 import React from "react"
 import Especialidades from "./Especialidades/Especialidades";
 import Medicos from "./Medicos/Medicos";
-import TabelaPagamentos from "./Pagamentos/TabelaPagamentos";
 import Utentes from "./Utentes/Utentes";
 import Consultas from "./Consultas/Consultas";
-import  Diagnosticos from "./Diagnosticos/Diagnosticos"
+import Diagnosticos from "./Diagnosticos/Diagnosticos"
 import Prescricoes from "./Prescricoes/Prescricoes";
 import Pagamentos from "./Pagamentos/Pagamentos";
+import Sobre from "./Sobre"
 /**
  * função que pede à API os dados do link, sendo o link uma string
  */
@@ -156,22 +156,23 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <Especialidades especialidadesIN={especialidades} medicosIN={medicos} LoadDados={this.LoadEspecialidades.bind(this)} />
-        <Medicos medicosIN={medicos} especialidadesIN={especialidades}  LoadDados={this.LoadMedicos.bind(this)} />
-        <Utentes utentesIN={utentes} LoadDados={this.LoadUtentes.bind(this)} />
-        <Consultas consultasIN={consultas} 
-                  medicosIN={medicos} 
-                  utentesIN={utentes} 
-                  diagnosticosIN = {diagnosticos}
-                  LoadDados={this.LoadConsultas.bind(this)} />
-        <Diagnosticos diagnosticosIN={diagnosticos} LoadDados={this.LoadDiagnosticos.bind(this)} />
-        <Prescricoes prescricoesIN={prescricoes} 
-                  diagnosticosIN = {diagnosticos}
-                  LoadDados={this.LoadPrescricoes.bind(this)} />
-        <Pagamentos pagamentosIN={pagamentos} 
-                  consultasIN = {consultas}
-                  LoadDados={this.LoadPagamentos.bind(this)} />
         <br /><br />
+        <Sobre />
+        <Especialidades especialidadesIN={especialidades} medicosIN={medicos} LoadDados={this.LoadEspecialidades.bind(this)} />
+        <Medicos medicosIN={medicos} especialidadesIN={especialidades} LoadDados={this.LoadMedicos.bind(this)} />
+        <Utentes utentesIN={utentes} LoadDados={this.LoadUtentes.bind(this)} />
+        <Consultas consultasIN={consultas}
+          medicosIN={medicos}
+          utentesIN={utentes}
+          diagnosticosIN={diagnosticos}
+          LoadDados={this.LoadConsultas.bind(this)} />
+        <Diagnosticos diagnosticosIN={diagnosticos} LoadDados={this.LoadDiagnosticos.bind(this)} />
+        <Prescricoes prescricoesIN={prescricoes}
+          diagnosticosIN={diagnosticos}
+          LoadDados={this.LoadPrescricoes.bind(this)} />
+        <Pagamentos pagamentosIN={pagamentos}
+          consultasIN={consultas}
+          LoadDados={this.LoadPagamentos.bind(this)} />
       </div>
     )
   }

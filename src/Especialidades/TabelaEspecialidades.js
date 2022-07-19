@@ -49,7 +49,7 @@ class TabelaEspecialidades extends React.Component {
     render() {
         const { dadosEspecIN, apagaOUT } = this.props;
         return (
-            <table className="table table-striped">
+            <table className="table table-striped table-bordered">
                 <Cabecalho />
                 <Corpo dadosTabelaIN={dadosEspecIN} apagarEspecialidade={apagaOUT}/>
             </table>

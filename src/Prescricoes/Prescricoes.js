@@ -83,7 +83,7 @@
      render() {
          const { prescricoesIN, diagnosticosIN } = this.props;
          return (
-             <div>
+             <div  className="border p-5 mb-5">
                  <h1>Prescricoes</h1>
                  <h4>Novo Prescricao:</h4>
                  <FormPrescricoes novoPrescricaoOUT={this.handleNovoPrescricao}

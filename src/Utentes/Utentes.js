@@ -86,7 +86,7 @@ class Utentes extends React.Component {
     render() {
         const { utentesIN } = this.props;
         return (
-            <div>
+            <div  className="border p-5 mb-5">
                 <h1>Utentes</h1>
                 <h4>Novo Utente:</h4>
                 <FormUtentes novoUtenteOUT={this.handleNovoUtente} />

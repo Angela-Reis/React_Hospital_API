@@ -86,7 +86,7 @@ class Medicos extends React.Component {
     render() {
         const { medicosIN, especialidadesIN } = this.props;
         return (
-            <div>
+            <div  className="border p-5 mb-5">
                 <h1>Médicos</h1>
                 <h4>Novo Médico:</h4>
                 <FormMedicos especialidadesIN={especialidadesIN} novoMedicoOUT={this.handleNovoMedico} />
